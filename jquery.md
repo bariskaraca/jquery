@@ -3,146 +3,61 @@
 ### Table of Contents
 
 -   [$][1]
-    -   [Parameters][2]
-    -   [Examples][3]
-    -   [ready][4]
-        -   [Parameters][5]
-        -   [Examples][6]
-    -   [find][7]
-        -   [Parameters][8]
-        -   [Examples][9]
-    -   [push][10]
-        -   [Parameters][11]
-        -   [Examples][12]
-    -   [index][13]
-        -   [Examples][14]
-    -   [addClass][15]
-        -   [Parameters][16]
-        -   [Examples][17]
-    -   [hasClass][18]
-        -   [Parameters][19]
-        -   [Examples][20]
-    -   [removeClass][21]
-        -   [Parameters][22]
-        -   [Examples][23]
-    -   [toggleClass][24]
-        -   [Parameters][25]
-        -   [Examples][26]
-    -   [val][27]
-        -   [Parameters][28]
-        -   [Examples][29]
-    -   [prop][30]
-        -   [Parameters][31]
-        -   [Examples][32]
-    -   [html][33]
-        -   [Parameters][34]
-        -   [Examples][35]
-    -   [attr][36]
-        -   [Parameters][37]
-        -   [Examples][38]
-    -   [data][39]
-        -   [Parameters][40]
-        -   [Examples][41]
-    -   [text][42]
-        -   [Parameters][43]
-        -   [Examples][44]
-    -   [removeAttr][45]
-        -   [Parameters][46]
-        -   [Examples][47]
-    -   [css][48]
-        -   [Parameters][49]
-        -   [Examples][50]
-    -   [offset][51]
-        -   [Examples][52]
-    -   [append][53]
-        -   [Parameters][54]
-        -   [Examples][55]
-    -   [appendTo][56]
-        -   [Parameters][57]
-        -   [Examples][58]
-    -   [after][59]
-        -   [Parameters][60]
-        -   [Examples][61]
-    -   [before][62]
-        -   [Parameters][63]
-        -   [Examples][64]
-    -   [prepend][65]
-        -   [Parameters][66]
-        -   [Examples][67]
-    -   [clone][68]
-        -   [Examples][69]
-    -   [empty][70]
-        -   [Examples][71]
-    -   [remove][72]
-        -   [Examples][73]
-    -   [on][74]
-        -   [Parameters][75]
-        -   [Examples][76]
-    -   [off][77]
-        -   [Parameters][78]
-        -   [Examples][79]
-    -   [unbind][80]
-        -   [Parameters][81]
-        -   [Examples][82]
-    -   [one][83]
-        -   [Parameters][84]
-        -   [Examples][85]
-    -   [trigger][86]
-        -   [Parameters][87]
-        -   [Examples][88]
-    -   [hover][89]
-        -   [Parameters][90]
-        -   [Examples][91]
-    -   [submit][92]
-        -   [Parameters][93]
-        -   [Examples][94]
-    -   [reset][95]
-        -   [Examples][96]
-    -   [children][97]
-        -   [Parameters][98]
-        -   [Examples][99]
-    -   [parents][100]
-        -   [Parameters][101]
-        -   [Examples][102]
-    -   [siblings][103]
-        -   [Parameters][104]
-        -   [Examples][105]
-    -   [parent][106]
-        -   [Parameters][107]
-        -   [Examples][108]
-    -   [closest][109]
-        -   [Parameters][110]
-        -   [Examples][111]
-    -   [serialize][112]
-        -   [Examples][113]
-    -   [fadeIn][114]
-        -   [Parameters][115]
-        -   [Examples][116]
-    -   [fadeOut][117]
-        -   [Parameters][118]
-        -   [Examples][119]
-    -   [show][120]
-        -   [Parameters][121]
-        -   [Examples][122]
-    -   [hide][123]
-        -   [Parameters][124]
-        -   [Examples][125]
-    -   [toggle][126]
-        -   [Parameters][127]
-        -   [Examples][128]
-    -   [ajax][129]
-        -   [Parameters][130]
-        -   [Examples][131]
+    -   [ready][2]
+    -   [find][3]
+    -   [push][4]
+    -   [index][5]
+    -   [addClass][6]
+    -   [hasClass][7]
+    -   [removeClass][8]
+    -   [toggleClass][9]
+    -   [val][10]
+    -   [prop][11]
+    -   [html][12]
+    -   [attr][13]
+    -   [data][14]
+    -   [text][15]
+    -   [removeAttr][16]
+    -   [css][17]
+    -   [offset][18]
+    -   [append][19]
+    -   [appendTo][20]
+    -   [after][21]
+    -   [before][22]
+    -   [prepend][23]
+    -   [clone][24]
+    -   [empty][25]
+    -   [remove][26]
+    -   [on][27]
+    -   [off][28]
+    -   [unbind][29]
+    -   [one][30]
+    -   [trigger][31]
+    -   [hover][32]
+    -   [submit][33]
+    -   [reset][34]
+    -   [children][35]
+    -   [parents][36]
+    -   [siblings][37]
+    -   [parent][38]
+    -   [closest][39]
+    -   [serialize][40]
+    -   [fadeIn][41]
+    -   [fadeOut][42]
+    -   [show][43]
+    -   [hide][44]
+    -   [toggle][45]
+    -   [ajax][46]
 
 ## $
 
 Selects all elements with given selector.
 
-### Parameters
+**Parameters**
 
--   `selector` **([string][132] \| [HTMLElement][133])** 
+-   `selector` **([string][47] \| [HTMLElement][48])** 
 
-### Examples
+**Examples**
 
 ```javascript
 $("*") // Select all elements in document
@@ -188,11 +103,11 @@ $(".class:even") // Selects even elements, zero-indexed.
 
 This will also be an instance member, Observable#save.
 
-#### Parameters
+**Parameters**
 
--   `handler` **[function][134]** 
+-   `handler` **[function][49]** 
 
-#### Examples
+**Examples**
 
 ```javascript
 $(document).ready(function(){
@@ -204,11 +119,11 @@ $(document).ready(function(){
 
 Get the descendants of each element in the current set of matched elements, filtered by a selector, jQuery object, or element. Selector can be use same as selectors
 
-#### Parameters
+**Parameters**
 
--   `selector` **([string][132] \| [HTMLElement][133])** 
+-   `selector` **([string][47] \| [HTMLElement][48])** 
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").find(selector)
@@ -220,11 +135,11 @@ Returns **any** $
 
 Get the index of the first element in the set of matched elements.
 
-#### Parameters
+**Parameters**
 
--   `element` **([HTMLElement][133] \| [$][135])** 
+-   `element` **([HTMLElement][48] \| [$][50])** 
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").push(element) // Add an element to the current set of matched elements.
@@ -234,29 +149,29 @@ $(".class").push(element) // Add an element to the current set of matched elemen
 $(".class").push($(".class")) // Add elements as Jquery ($) object to the current set of matched elements.
 ```
 
-Returns **[$][135]** 
+Returns **[$][50]** 
 
 ### index
 
 Get the index of the first element in the set of matched elements.
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").index()
 ```
 
-Returns **[number][136]** 
+Returns **[number][51]** 
 
 ### addClass
 
 Adds the specified class(es) to each element in the set of matched elements.
 
-#### Parameters
+**Parameters**
 
--   `className` **[string][132]** 
+-   `className` **[string][47]** 
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").addClass(className)
@@ -268,57 +183,57 @@ Returns **any** $
 
 Determine whether any of the matched elements are assigned the given class.
 
-#### Parameters
+**Parameters**
 
--   `className` **[string][132]** 
+-   `className` **[string][47]** 
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").hasClass(className)
 ```
 
-Returns **[boolean][137]** 
+Returns **[boolean][52]** 
 
 ### removeClass
 
 Remove a single class or multiple classes from each element in the set of matched elements.
 
-#### Parameters
+**Parameters**
 
--   `className` **[string][132]** 
+-   `className` **[string][47]** 
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").removeClass(className)
 ```
 
-Returns **[$][135]** 
+Returns **[$][50]** 
 
 ### toggleClass
 
 Add or remove one or more classes from each element in the set of matched elements, depending on either the class’s presence or the value of the state argument.
 
-#### Parameters
+**Parameters**
 
--   `className` **[string][132]** 
+-   `className` **[string][47]** 
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").toggleClass(className)
 ```
 
-Returns **[$][135]** 
+Returns **[$][50]** 
 
 ### val
 
-#### Parameters
+**Parameters**
 
--   `val` **[string][132]** 
+-   `val` **[string][47]** 
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").val(val) // Set the given value of the all elements in the set of matched elements.
@@ -328,18 +243,18 @@ $(".class").val(val) // Set the given value of the all elements in the set of ma
 $(".class").val() // Get the current value of the first element in the set of matched elements.
 ```
 
-Returns **([$][135] \| [string][132])** 
+Returns **([$][50] \| [string][47])** 
 
 ### prop
 
 Add or remove one or more classes from each element in the set of matched elements, depending on either the class’s presence or the value of the state argument.
 
-#### Parameters
+**Parameters**
 
--   `prop` **[string][132]** 
+-   `prop` **[string][47]** 
 -   `val`  
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").prop(prop) // Get the value of a property for the first element in the set of matched elements.
@@ -349,15 +264,15 @@ $(".class").prop(prop) // Get the value of a property for the first element in t
 $(".class").prop(prop, val) // Set a property for the set of matched elements.
 ```
 
-Returns **([$][135] \| [string][132])** 
+Returns **([$][50] \| [string][47])** 
 
 ### html
 
-#### Parameters
+**Parameters**
 
--   `html` **[string][132]** 
+-   `html` **[string][47]** 
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").html(html) // Set the html contents of the all elements in the set of matched elements.
@@ -367,16 +282,16 @@ $(".class").html(html) // Set the html contents of the all elements in the set o
 $(".class").html() // Get the html contents of the first element in the set of matched elements.
 ```
 
-Returns **([$][135] \| [string][132])** 
+Returns **([$][50] \| [string][47])** 
 
 ### attr
 
-#### Parameters
+**Parameters**
 
--   `attr` **[string][132]** 
+-   `attr` **[string][47]** 
 -   `val`  
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").attr(attr, val) // Set the value of an attribute for the all elements in the set of matched elements.
@@ -386,16 +301,16 @@ $(".class").attr(attr, val) // Set the value of an attribute for the all element
 $(".class").attr(attr) // Get the value of an attribute for the first element in the set of matched elements.
 ```
 
-Returns **([$][135] \| [string][132])** 
+Returns **([$][50] \| [string][47])** 
 
 ### data
 
-#### Parameters
+**Parameters**
 
--   `key` **[string][132]** 
+-   `key` **[string][47]** 
 -   `val`  
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").data(key, val) // Store arbitrary data associated with the matched elements.
@@ -409,15 +324,15 @@ $(".class").data(attr) // Return arbitrary data associated with the first elemen
 $(".class").data() // Return all the data stores of the first element in the set of matched elements.
 ```
 
-Returns **([$][135] \| [string][132])** 
+Returns **([$][50] \| [string][47])** 
 
 ### text
 
-#### Parameters
+**Parameters**
 
--   `text` **[string][132]** 
+-   `text` **[string][47]** 
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").text(text) // Set the text contents of the all elements in the set of matched elements.
@@ -427,30 +342,30 @@ $(".class").text(text) // Set the text contents of the all elements in the set o
 $(".class").text() // Get the text contents of the first element in the set of matched elements.
 ```
 
-Returns **([$][135] \| [string][132])** 
+Returns **([$][50] \| [string][47])** 
 
 ### removeAttr
 
-#### Parameters
+**Parameters**
 
--   `attr` **[string][132]** 
+-   `attr` **[string][47]** 
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").removeAttr(attr) // Remove an attribute from each element in the set of matched elements.
 ```
 
-Returns **([$][135] \| [string][132])** 
+Returns **([$][50] \| [string][47])** 
 
 ### css
 
-#### Parameters
+**Parameters**
 
--   `key` **([string][132] \| [object][138])** 
+-   `key` **([string][47] \| [object][53])** 
 -   `value`  
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").css(key, value) // Set the computed style properties for all elements in the set of matched elements.
@@ -467,256 +382,256 @@ $(".class").css({
 }) // Set the computed style properties for all elements in the set of matched elements.
 ```
 
-Returns **([$][135] \| [string][132] \| [$][135])** 
+Returns **([$][50] \| [string][47] \| [$][50])** 
 
 ### offset
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").offset() // Get the current coordinates of the first element, or set the coordinates of every element, in the set of matched elements, relative to the document.
 ```
 
-Returns **[object][138]** // {width: width, height: height, left: left, top: top}
+Returns **[object][53]** // {width: width, height: height, left: left, top: top}
 
 ### append
 
-#### Parameters
+**Parameters**
 
--   `element` **[HTMLElement][133]** 
+-   `element` **[HTMLElement][48]** 
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").append(element) // Insert content, specified by the parameter, to the end of each element in the set of matched elements.
 ```
 
-Returns **[$][135]** 
+Returns **[$][50]** 
 
 ### appendTo
 
-#### Parameters
+**Parameters**
 
--   `element` **[HTMLElement][133]** 
+-   `element` **[HTMLElement][48]** 
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").appendTo(element) // Insert every element in the set of matched elements to the end of the target.
 ```
 
-Returns **[$][135]** 
+Returns **[$][50]** 
 
 ### after
 
-#### Parameters
+**Parameters**
 
--   `element` **[HTMLElement][133]** 
+-   `element` **[HTMLElement][48]** 
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").after(element) // Insert content, specified by the parameter, after each element in the set of matched elements.
 ```
 
-Returns **[$][135]** 
+Returns **[$][50]** 
 
 ### before
 
-#### Parameters
+**Parameters**
 
--   `element` **[HTMLElement][133]** 
+-   `element` **[HTMLElement][48]** 
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").before(element) // Insert content, specified by the parameter, before each element in the set of matched elements.
 ```
 
-Returns **[$][135]** 
+Returns **[$][50]** 
 
 ### prepend
 
-#### Parameters
+**Parameters**
 
--   `element` **[HTMLElement][133]** 
+-   `element` **[HTMLElement][48]** 
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").prepend(element) // Insert content, specified by the parameter, to the beginning of each element in the set of matched elements.
 ```
 
-Returns **[$][135]** 
+Returns **[$][50]** 
 
 ### clone
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").clone() // Create a deep copy of the set of matched elements.
 ```
 
-Returns **[HTMLElement][133]** 
+Returns **[HTMLElement][48]** 
 
 ### empty
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").empty() // Remove all child nodes and text content of the set of matched elements from the DOM.
 ```
 
-Returns **[$][135]** 
+Returns **[$][50]** 
 
 ### remove
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").remove() // Remove the set of matched elements from the DOM.
 ```
 
-Returns **[$][135]** 
+Returns **[$][50]** 
 
 ### on
 
 Attach a handler to an event(s) for the elements.
 
-#### Parameters
+**Parameters**
 
--   `eventNames` **([string][132] \| [array][139])** 
--   `handler` **[function][134]** 
--   `once` **[boolean][137]** // default: false
+-   `eventNames` **([string][47] \| [array][54])** 
+-   `handler` **[function][49]** 
+-   `once` **[boolean][52]** // default: false
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").on("click", handler)
 ```
 
-Returns **[$][135]** 
+Returns **[$][50]** 
 
 ### off
 
 Remove an event(s) handler.
 
-#### Parameters
+**Parameters**
 
--   `eventNames` **([string][132] \| [array][139])** 
--   `handler` **[function][134]** 
+-   `eventNames` **([string][47] \| [array][54])** 
+-   `handler` **[function][49]** 
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").off("click")
 ```
 
-Returns **[$][135]** 
+Returns **[$][50]** 
 
 ### unbind
 
 Remove an event(s) handler.
 
-#### Parameters
+**Parameters**
 
--   `eventNames` **([string][132] \| [array][139])** 
--   `handler` **[function][134]** 
+-   `eventNames` **([string][47] \| [array][54])** 
+-   `handler` **[function][49]** 
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").unbind("click", handler)
 ```
 
-Returns **[$][135]** 
+Returns **[$][50]** 
 
 ### one
 
 Attach a handler to an event(s) for the elements. The handler is executed at most once per element per event type.
 
-#### Parameters
+**Parameters**
 
--   `eventNames` **([string][132] \| [array][139])** 
--   `handler` **[function][134]** 
+-   `eventNames` **([string][47] \| [array][54])** 
+-   `handler` **[function][49]** 
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").one("click", handler)
 ```
 
-Returns **[$][135]** 
+Returns **[$][50]** 
 
 ### trigger
 
 Execute all handlers and behaviors attached to the matched elements for the given event types.
 
-#### Parameters
+**Parameters**
 
--   `eventNames` **([string][132] \| [array][139])** 
--   `options` **[object][138]** 
+-   `eventNames` **([string][47] \| [array][54])** 
+-   `options` **[object][53]** 
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").trigger("click", options)
 ```
 
-Returns **[$][135]** 
+Returns **[$][50]** 
 
 ### hover
 
 Bind one or two handlers to the matched elements, to be executed when the mouse pointer enters and leaves the elements.
 
-#### Parameters
+**Parameters**
 
--   `onMouseOver` **[function][134]** 
--   `onMouseOut` **[function][134]** 
+-   `onMouseOver` **[function][49]** 
+-   `onMouseOut` **[function][49]** 
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").hover(onMouseOver, onMouseOut)
 ```
 
-Returns **[$][135]** 
+Returns **[$][50]** 
 
 ### submit
 
 Bind an event handler to the “submit” JavaScript event, or trigger that event on an element.
 
-#### Parameters
+**Parameters**
 
--   `handler` **[function][134]** 
+-   `handler` **[function][49]** 
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").submit(handler)
 ```
 
-Returns **[$][135]** 
+Returns **[$][50]** 
 
 ### reset
 
 Resets the values of all elements in the matched forms
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").reset()
 ```
 
-Returns **[$][135]** 
+Returns **[$][50]** 
 
 ### children
 
-#### Parameters
+**Parameters**
 
--   `selector` **([string][132] \| [HTMLElement][133])** 
+-   `selector` **([string][47] \| [HTMLElement][48])** 
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").children(selector) // Get the children of each element filtered by given selector in the set of matched elements.
@@ -726,15 +641,15 @@ $(".class").children(selector) // Get the children of each element filtered by g
 $(".class").children() // Get the children of each element in the set of matched elements.
 ```
 
-Returns **[$][135]** 
+Returns **[$][50]** 
 
 ### parents
 
-#### Parameters
+**Parameters**
 
--   `selector` **([string][132] \| [HTMLElement][133])** 
+-   `selector` **([string][47] \| [HTMLElement][48])** 
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").parents(selector) // Get the ancestors of each element filtered by given selector in the current set of matched elements.
@@ -744,15 +659,15 @@ $(".class").parents(selector) // Get the ancestors of each element filtered by g
 $(".class").parents() // Get the ancestors of each element in the current set of matched elements.
 ```
 
-Returns **[$][135]** 
+Returns **[$][50]** 
 
 ### siblings
 
-#### Parameters
+**Parameters**
 
--   `selector` **([string][132] \| [HTMLElement][133])** 
+-   `selector` **([string][47] \| [HTMLElement][48])** 
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").siblings(selector) // Get the siblings of each element filtered by given selector in the set of matched elements.
@@ -762,15 +677,15 @@ $(".class").siblings(selector) // Get the siblings of each element filtered by g
 $(".class").siblings() // Get the siblings of each element in the set of matched elements.
 ```
 
-Returns **[$][135]** 
+Returns **[$][50]** 
 
 ### parent
 
-#### Parameters
+**Parameters**
 
--   `selector` **([string][132] \| [HTMLElement][133])** 
+-   `selector` **([string][47] \| [HTMLElement][48])** 
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").parent(selector) // Get the parent of each element filtered by given selector in the current set of matched elements.
@@ -780,128 +695,128 @@ $(".class").parent(selector) // Get the parent of each element filtered by given
 $(".class").parent() // Get the parent of each element in the current set of matched elements.
 ```
 
-Returns **[$][135]** 
+Returns **[$][50]** 
 
 ### closest
 
-#### Parameters
+**Parameters**
 
--   `selector` **([string][132] \| [HTMLElement][133])** 
+-   `selector` **([string][47] \| [HTMLElement][48])** 
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").closest(selector) // For each element in the set, get the first element that matches the selector by testing the element itself and traversing up through its ancestors in the DOM tree.
 ```
 
-Returns **[$][135]** 
+Returns **[$][50]** 
 
 ### serialize
 
 Encode a set of form elements as a string for submission.
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").serialize()
 ```
 
-Returns **[string][132]** 
+Returns **[string][47]** 
 
 ### fadeIn
 
 Display the matched elements by fading them to opaque and visibility.
 
-#### Parameters
+**Parameters**
 
--   `time` **[number][136]** // animation time as miliseconds
--   `callback` **[function][134]** // callback function fired when animation is done
+-   `time` **[number][51]** // animation time as miliseconds
+-   `callback` **[function][49]** // callback function fired when animation is done
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").fadeIn(time, callback)
 ```
 
-Returns **[$][135]** 
+Returns **[$][50]** 
 
 ### fadeOut
 
 Hide the matched elements by fading them to opaque and visibility.
 
-#### Parameters
+**Parameters**
 
--   `time` **[number][136]** // animation time as miliseconds
--   `callback` **[function][134]** // callback function fired when animation is done
+-   `time` **[number][51]** // animation time as miliseconds
+-   `callback` **[function][49]** // callback function fired when animation is done
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").fadeOut(time, callback)
 ```
 
-Returns **[$][135]** 
+Returns **[$][50]** 
 
 ### show
 
 Show the matched elements by fading them to opaque and visibility.
 
-#### Parameters
+**Parameters**
 
--   `time` **[number][136]** // animation time as miliseconds
--   `direction` **[string][132]** // "left" for left to right, "top" for top to bottom
+-   `time` **[number][51]** // animation time as miliseconds
+-   `direction` **[string][47]** // "left" for left to right, "top" for top to bottom
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").show(time, direction)
 ```
 
-Returns **[$][135]** 
+Returns **[$][50]** 
 
 ### hide
 
 Hide the matched elements by fading them to opaque and visibility.
 
-#### Parameters
+**Parameters**
 
--   `time` **[number][136]** // animation time as miliseconds
--   `direction` **[string][132]** // "left" for left to right, "top" for top to bottom
+-   `time` **[number][51]** // animation time as miliseconds
+-   `direction` **[string][47]** // "left" for left to right, "top" for top to bottom
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").hide(time, direction)
 ```
 
-Returns **[$][135]** 
+Returns **[$][50]** 
 
 ### toggle
 
 Toggle the matched elements by fading them to opaque and visibility.
 
-#### Parameters
+**Parameters**
 
--   `time` **[number][136]** // animation time as miliseconds
--   `direction` **[string][132]** // "left" for left to right, "top" for top to bottom
+-   `time` **[number][51]** // animation time as miliseconds
+-   `direction` **[string][47]** // "left" for left to right, "top" for top to bottom
 
-#### Examples
+**Examples**
 
 ```javascript
 $(".class").toggle(time, direction)
 ```
 
-Returns **[$][135]** 
+Returns **[$][50]** 
 
 ### ajax
 
 An ajax request can be created by using following codes.
 
-#### Parameters
+**Parameters**
 
--   `options` **[object][138]** 
+-   `options` **[object][53]** 
 
-#### Examples
+**Examples**
 
 ```javascript
 example of options
@@ -943,284 +858,114 @@ example of options
 $.ajax(time, options)
 ```
 
-Returns **[Promise][140]** 
+Returns **[Promise][55]** 
 
 [1]: #
 
-[2]: #parameters
+[2]: #ready
 
-[3]: #examples
+[3]: #find
 
-[4]: #ready
+[4]: #push
 
-[5]: #parameters-1
+[5]: #index
 
-[6]: #examples-1
+[6]: #addclass
 
-[7]: #find
+[7]: #hasclass
 
-[8]: #parameters-2
+[8]: #removeclass
 
-[9]: #examples-2
+[9]: #toggleclass
 
-[10]: #push
+[10]: #val
 
-[11]: #parameters-3
+[11]: #prop
 
-[12]: #examples-3
+[12]: #html
 
-[13]: #index
+[13]: #attr
 
-[14]: #examples-4
+[14]: #data
 
-[15]: #addclass
+[15]: #text
 
-[16]: #parameters-4
+[16]: #removeattr
 
-[17]: #examples-5
+[17]: #css
 
-[18]: #hasclass
+[18]: #offset
 
-[19]: #parameters-5
+[19]: #append
 
-[20]: #examples-6
+[20]: #appendto
 
-[21]: #removeclass
+[21]: #after
 
-[22]: #parameters-6
+[22]: #before
 
-[23]: #examples-7
+[23]: #prepend
 
-[24]: #toggleclass
+[24]: #clone
 
-[25]: #parameters-7
+[25]: #empty
 
-[26]: #examples-8
+[26]: #remove
 
-[27]: #val
+[27]: #on
 
-[28]: #parameters-8
+[28]: #off
 
-[29]: #examples-9
+[29]: #unbind
 
-[30]: #prop
+[30]: #one
 
-[31]: #parameters-9
+[31]: #trigger
 
-[32]: #examples-10
+[32]: #hover
 
-[33]: #html
+[33]: #submit
 
-[34]: #parameters-10
+[34]: #reset
 
-[35]: #examples-11
+[35]: #children
 
-[36]: #attr
+[36]: #parents
 
-[37]: #parameters-11
+[37]: #siblings
 
-[38]: #examples-12
+[38]: #parent
 
-[39]: #data
+[39]: #closest
 
-[40]: #parameters-12
+[40]: #serialize
 
-[41]: #examples-13
+[41]: #fadein
 
-[42]: #text
+[42]: #fadeout
 
-[43]: #parameters-13
+[43]: #show
 
-[44]: #examples-14
+[44]: #hide
 
-[45]: #removeattr
+[45]: #toggle
 
-[46]: #parameters-14
+[46]: #ajax
 
-[47]: #examples-15
+[47]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
 
-[48]: #css
+[48]: https://developer.mozilla.org/docs/Web/HTML/Element
 
-[49]: #parameters-15
+[49]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function
 
-[50]: #examples-16
+[50]: #
 
-[51]: #offset
+[51]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
 
-[52]: #examples-17
+[52]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
 
-[53]: #append
+[53]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
 
-[54]: #parameters-16
+[54]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
 
-[55]: #examples-18
-
-[56]: #appendto
-
-[57]: #parameters-17
-
-[58]: #examples-19
-
-[59]: #after
-
-[60]: #parameters-18
-
-[61]: #examples-20
-
-[62]: #before
-
-[63]: #parameters-19
-
-[64]: #examples-21
-
-[65]: #prepend
-
-[66]: #parameters-20
-
-[67]: #examples-22
-
-[68]: #clone
-
-[69]: #examples-23
-
-[70]: #empty
-
-[71]: #examples-24
-
-[72]: #remove
-
-[73]: #examples-25
-
-[74]: #on
-
-[75]: #parameters-21
-
-[76]: #examples-26
-
-[77]: #off
-
-[78]: #parameters-22
-
-[79]: #examples-27
-
-[80]: #unbind
-
-[81]: #parameters-23
-
-[82]: #examples-28
-
-[83]: #one
-
-[84]: #parameters-24
-
-[85]: #examples-29
-
-[86]: #trigger
-
-[87]: #parameters-25
-
-[88]: #examples-30
-
-[89]: #hover
-
-[90]: #parameters-26
-
-[91]: #examples-31
-
-[92]: #submit
-
-[93]: #parameters-27
-
-[94]: #examples-32
-
-[95]: #reset
-
-[96]: #examples-33
-
-[97]: #children
-
-[98]: #parameters-28
-
-[99]: #examples-34
-
-[100]: #parents
-
-[101]: #parameters-29
-
-[102]: #examples-35
-
-[103]: #siblings
-
-[104]: #parameters-30
-
-[105]: #examples-36
-
-[106]: #parent
-
-[107]: #parameters-31
-
-[108]: #examples-37
-
-[109]: #closest
-
-[110]: #parameters-32
-
-[111]: #examples-38
-
-[112]: #serialize
-
-[113]: #examples-39
-
-[114]: #fadein
-
-[115]: #parameters-33
-
-[116]: #examples-40
-
-[117]: #fadeout
-
-[118]: #parameters-34
-
-[119]: #examples-41
-
-[120]: #show
-
-[121]: #parameters-35
-
-[122]: #examples-42
-
-[123]: #hide
-
-[124]: #parameters-36
-
-[125]: #examples-43
-
-[126]: #toggle
-
-[127]: #parameters-37
-
-[128]: #examples-44
-
-[129]: #ajax
-
-[130]: #parameters-38
-
-[131]: #examples-45
-
-[132]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
-
-[133]: https://developer.mozilla.org/docs/Web/HTML/Element
-
-[134]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function
-
-[135]: #
-
-[136]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
-
-[137]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
-
-[138]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
-
-[139]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
-
-[140]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
+[55]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
