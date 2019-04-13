@@ -2,32 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58f067a2-9afd-4325-8fdc-488e6b636fce" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/assets/anchor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/assets/bass-addons.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/assets/bass.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/assets/fonts/EOT/SourceCodePro-Bold.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/assets/fonts/EOT/SourceCodePro-Regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/assets/fonts/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/assets/fonts/OTF/SourceCodePro-Bold.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/assets/fonts/OTF/SourceCodePro-Regular.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/assets/fonts/TTF/SourceCodePro-Bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/assets/fonts/TTF/SourceCodePro-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/assets/fonts/WOFF/OTF/SourceCodePro-Bold.otf.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/assets/fonts/WOFF/OTF/SourceCodePro-Regular.otf.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/assets/fonts/WOFF/TTF/SourceCodePro-Bold.ttf.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/assets/fonts/WOFF/TTF/SourceCodePro-Regular.ttf.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/assets/fonts/WOFF2/OTF/SourceCodePro-Bold.otf.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/assets/fonts/WOFF2/OTF/SourceCodePro-Regular.otf.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/assets/fonts/WOFF2/TTF/SourceCodePro-Bold.ttf.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/assets/fonts/WOFF2/TTF/SourceCodePro-Regular.ttf.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/assets/fonts/source-code-pro.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/assets/github.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/assets/site.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/assets/split.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/assets/split.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/assets/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/test.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +13,7 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/doc/index.html">
+        <entry file="file://$PROJECT_DIR$/docs/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="72">
               <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
@@ -890,7 +865,7 @@
             <path>
               <item name="src" type="b2602c69:ProjectViewProjectNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="doc" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -928,7 +903,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1555188494826</updated>
-      <workItem from="1555188496086" duration="971000" />
+      <workItem from="1555188496086" duration="1480000" />
     </task>
     <task id="LOCAL-00001" summary="readme">
       <created>1555188659616</created>
@@ -944,11 +919,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555188708117</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="readme">
+      <created>1555189651478</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1555189651478</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="971000" />
+    <option name="totallyTimeSpent" value="1480000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
@@ -1042,7 +1024,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doc/index.html">
+    <entry file="file://$PROJECT_DIR$/docs/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
