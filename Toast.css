@@ -1,0 +1,43 @@
+.tesodev_toaster {
+    position: absolute;
+    top: 50px;
+    /*right: 30px;*/
+    width: 200px;
+    padding: 15px;
+    z-index: 5000;
+    background-color: #00447b;
+    border-radius: 30px;
+    color: white;
+    -webkit-transition:all 0.5s ease-out;
+    -moz-transition:all 0.5s ease-out;
+    -o-transition:all 0.5s ease-out;
+    transition:all 0.5s ease-out;
+    text-align: center;
+    animation-name: toaster;
+    animation-duration: 450ms;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    -webkit-animation-name: toaster;
+    -webkit-animation-duration: 450ms;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-fill-mode: forwards;
+}
+.tesodev_toaster_text{padding: 1px; display:block;}
+@keyframes toaster{
+    0%{
+        -webkit-transform: scale(0.3) translate3d(0,0,0);
+        transform: scale(0.3) translate3d(0,0,0);
+    }
+    50%{
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+    80%{
+        -webkit-transform: scale(0.89);
+        transform: scale(0.89);
+    }
+    100%{
+        -webkit-transform: scale(1) translate3d(0,0,0);
+        transform: scale(1) translate3d(0,0,0);
+    }
+}
