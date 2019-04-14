@@ -101,9 +101,11 @@ function Jquery(selector) {
         return collection
     }
     this.el = _selector(selector);
-    // this[_toArray](this.el).forEach(function(value, index) {
-    //     that[index] = value
-    // })
+    this.length = this[_toArray](this.el).length;
+    const that = this;
+    this[_toArray](this.el).forEach(function(value, index) {
+        that[index] = value
+    })
 }
 /**
  * Selects all elements with given selector.
@@ -460,6 +462,110 @@ Jquery.prototype = {
             })
         }
         return this
+    },
+    /**
+     * Get the current computed height for the first element in the set of matched elements.
+     * @memberof $#
+     * @example $(".class").height()
+     * @return {number}
+     */
+    height: function(){
+        if(this[_toArray](this.el).length)
+            return this[_toArray](this.el)[0].getBoundingClientRect()["height"];
+        else
+            return undefined
+    },
+    /**
+     * Get the current computed width for the first element in the set of matched elements.
+     * @memberof $#
+     * @example $(".class").width()
+     * @return {number}
+     */
+    width: function(){
+        if(this[_toArray](this.el).length)
+            return this[_toArray](this.el)[0].getBoundingClientRect()["width"];
+        else
+            return undefined
+    },
+    /**
+     * Get the current computed height for the first element in the set of matched elements, including padding but not border.
+     * @memberof $#
+     * @example $(".class").innerHeight()
+     * @return {number}
+     */
+    innerHeight: function(){
+        if(this[_toArray](this.el).length) {
+            let el= this[_toArray](this.el)[0], height;
+            // try {
+            //     height = window.getComputedStyle(el, null)
+            //         .getPropertyValue('height');
+            // } catch(e) {
+            //     height = el.currentStyle.height;
+            // }
+            return parseFloat(el.clientHeight);
+        }
+        else
+            return undefined
+    },
+    /**
+     * Get the current computed height for the first element in the set of matched elements, including padding but not border.
+     * @memberof $#
+     * @example $(".class").innerWidth()
+     * @return {number}
+     */
+    innerWidth: function(){
+        if(this[_toArray](this.el).length) {
+            let el= this[_toArray](this.el)[0], height;
+            // try {
+            //     height = window.getComputedStyle(el, null)
+            //         .getPropertyValue('width');
+            // } catch(e) {
+            //     height = el.currentStyle.width;
+            // }
+            return parseFloat(el.clientWidth);
+        }
+        else
+            return undefined
+    },
+    /**
+     * Get the current computed outer height (including padding, border, and optionally margin) for the first element in the set of matched elements.
+     * @memberof $#
+     * @example $(".class").outerHeight()
+     * @return {number}
+     */
+    outerHeight: function(){
+        if(this[_toArray](this.el).length) {
+            let el= this[_toArray](this.el)[0], height;
+            // try {
+            //     height = window.getComputedStyle(el, null)
+            //         .getPropertyValue('height');
+            // } catch(e) {
+            //     height = el.currentStyle.height;
+            // }
+            return parseFloat(el.offsetHeight);
+        }
+        else
+            return undefined
+    },
+    /**
+     * Get the current computed outer width (including padding, border, and optionally margin) for the first element in the set of matched elements.
+     * @memberof $#
+     * @example $(".class").outerWidth()
+     * @return {number}
+     */
+    outerWidth: function(){
+        if(this[_toArray](this.el).length) {
+            let el= this[_toArray](this.el)[0], height;
+            // try {
+            //     height = window.getComputedStyle(el, null)
+            //         .getPropertyValue('width');
+            // } catch(e) {
+            //     height = el.currentStyle.width;
+            // }
+            return parseFloat(el.offsetWidth);
+        }
+        else
+            return undefined
     },
     /**
      * @memberof $#
@@ -1283,13 +1389,173 @@ Jquery.prototype = {
             });
         }
 
-    } // add
+    }, // add
+    indexOf: function(element) {
+        return this[_toArray](this.el).indexOf(element)
+    },
+    every: function(callback) {
+        this[_toArray](this.el).every(function (el,idx, arr) {
+            callback.call(el,el,idx,arr);
+        })
+    },
+    reduce: function(callback, initialValue) {
+        return this[_toArray](this.el).reduce(callback, initialValue)
+    },
+    reduceRight: function(callback, initialValue) {
+        return this[_toArray](this.el).reduceRight(callback, initialValue)
+    },
+    alterClass: function ( removals ) {
+
+        this[_toArray](this.el).forEach(function(value) {
+            var classList = value.className.split( ' ' );
+            var count = classList.length;
+
+            for ( var j = 0; j < count; j++ ) {
+                if ( classList[j].search( removals ) != -1 ) {
+                    delete classList.splice( j, 1 )
+                }
+            }
+
+            value.className = classList.join( ' ' )
+        });
+        return this
+    },
+    focus: function() {
+        this[_toArray](this.el).forEach(function(value) {
+            value.focus();
+        });
+        return this;
+    },
+    isFocus: function(){
+        let focused = false;
+        this[_toArray](this.el).forEach(function (el, i) {
+            if(el === document.activeElement) {
+                focused = true;
+            }
+        });
+        return focused
+    },
+    tabs: function (callback, target_id){
+        this[_toArray](this.el).forEach(function (element) {
+            var tabTitles = element.getElementsByClassName("tab-title");
+            for (var i = 0; i < tabTitles.length; i++) {
+                var v = tabTitles[i], tagA = tabTitles[i].getElementsByTagName("a");
+                for (var j = 0; j < tagA.length; j++) {
+                    var el = tagA[j];
+                    el.index = j;
+                    if(v.getAttribute('target'))
+                        document.getElementById(v.getAttribute('target')).querySelector(".active").style.display = "block";
+                    if(callback === "select_tab"){
+                        var a = document.getElementById(v.getAttribute('target'));
+                        for (var k = 0; k < v.getElementsByTagName("a").length; k++) {
+                            v.getElementsByTagName("a")[k].className = v.getElementsByTagName("a")[k].className.replace("tab-title-active", "");
+                        }
+                        for (var l = 0; l < a.querySelectorAll("div.tab-data").length; l++) {
+                            a.querySelectorAll("div.tab-data")[l].style.display = "none";
+                        }
+                        if(el.getAttribute("href").substr(1) === target_id) {
+                            var b = a.querySelector('[id = "'+el.getAttribute("href").substr(1)+'"]');
+                            b.style.display = "block";
+                            el.className += "tab-title-active";
+                        }
+                    }
+                    el.onclick = function (e) {
+                        if (e.target.className.split(" ").indexOf("tab-title-active") < 0) {
+                            var a = document.getElementById(v.getAttribute('target'));
+                            for (var k = 0; k < v.getElementsByTagName("a").length; k++) {
+                                v.getElementsByTagName("a")[k].className = v.getElementsByTagName("a")[k].className.replace("tab-title-active", "");
+                            }
+                            for (var l = 0; l < a.querySelectorAll("div.tab-data").length; l++) {
+                                a.querySelectorAll("div.tab-data")[l].style.display = "none";
+                            }
+                            var b = a.querySelector('[id = "' + e.target.getAttribute("href").substr(1) + '"]');
+                            b.style.display = "block";
+                            e.target.className += "tab-title-active";
+                            if (typeof callback === "function")
+                                callback(e.target, e.target.index);
+                        }
+                    };
+                }
+            }
+        });
+        return this
+    },
+    elementsFromRectangle: function (x1, y1, x2, y2, fullyIn) {
+        let elements = [];
+        this[_toArray](this.el).forEach(function (element) {
+            if(!$(element).hasClass("group_item")) {
+                let $this = $(element), offset = $this.offset(),
+                    x = offset.left, y = offset.top,
+                    w = parseFloat($this.css("width")), h = parseFloat($this.css("height"));
+                let group = $(element).parent(".group_item");
+                if (group.el.length) {
+                    x += parseFloat(group.css("left"));
+                    y += parseFloat(group.css("top"));
+                }
+                if (fullyIn && x >= x1
+                    && y >= y1
+                    && x + w <= x2
+                    && y + h <= y2) {
+                    elements.push(element);
+                }
+                else if (!fullyIn && !((x > x2 || x1 > x+w) && !(y < y2 || y1 < y+h))) {
+                    // console.log(y1,y2,y,h)
+                    elements.push(element);
+                }
+            }
+        });
+        return $(elements);
+    },
+    animateCss: function(animationName, callback) {
+        const that=this;
+        let animationEnd = (function(el) {
+            let animations = {
+                animation: 'animationend',
+                OAnimation: 'oAnimationEnd',
+                MozAnimation: 'mozAnimationEnd',
+                WebkitAnimation: 'webkitAnimationEnd',
+            };
+
+            for (let t in animations) {
+                if (el.style[t] !== undefined) {
+                    return animations[t];
+                }
+            }
+        })(document.createElement('div'));
+
+        this.addClass(animationName).one(animationEnd, function() {
+            if (typeof callback === 'function') callback(animationName);
+        });
+
+        return this;
+    },
+    focusEnd: function() {
+        $(this).focus();
+        let tmp = $('<span />').appendTo($(this)),
+            node = tmp.get(0),
+            range = null,
+            sel = null;
+
+        if (document.selection) {
+            range = document.body.createTextRange();
+            range.moveToElementText(node);
+            range.select();
+        } else if (window.getSelection) {
+            range = document.createRange();
+            range.selectNode(node);
+            sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(range);
+        }
+        tmp.remove();
+        return this;
+    }
 };
 $.toast = function(message, backgroundColor, color, count, edge) {
     if(typeof backgroundColor === "object")
         tesodev_toast.show(message, backgroundColor);
     else{
-        let options = {};
+        var options = {};
         options.backgroundColor = backgroundColor;
         options.color = color;
         options.count = count;
@@ -1341,7 +1607,7 @@ $.toast = function(message, backgroundColor, color, count, edge) {
 $.ajax = function(options) {
     function getQueryString(object) {
         return Object.keys(object).reduce(function(acc, item) {
-            let prefix = !acc ? '' : acc + '&';
+            var prefix = !acc ? '' : acc + '&';
             return prefix + encodeURIComponent(item) + '=' + encodeURIComponent(object[item])
         }, '')
     }
@@ -1365,7 +1631,7 @@ $.ajax = function(options) {
         }
     }
     function parseResponse(xhr) {
-        let result;
+        var result;
         try {
             result = JSON.parse(xhr.responseText)
         } catch (e) {
@@ -1378,64 +1644,62 @@ $.ajax = function(options) {
             return name.toLowerCase() === 'content-type'
         })
     }
-    let url = options.url,
+    var url = options.url,
         type = options.type,
         data = options.data,
         headers = options.headers;
-    let returntypes = ['then', 'catch', 'always'];
-    let promisetypes = returntypes.reduce(function(promise, type) {
+    var returntypes = ['then', 'catch', 'always'];
+    var promisetypes = returntypes.reduce(function(promise, type) {
         promise[type] = function(callback) {
-            promise[type] = callback
+            promise[type] = callback;
             return promise
         };
         return promise
     }, {});
-    let xhr = new XMLHttpRequest();
+    var xhr = new XMLHttpRequest();
     xhr.open(type, url, !0);
     xhr.withCredentials = options.hasOwnProperty('withCredentials');
     headers = headers || {};
-    if (!hasContentType(headers)) {
-        headers['Content-Type'] = 'application/x-www-form-urlencoded'
-    }
     Object.keys(headers).forEach(function(name) {
         (headers[name] && xhr.setRequestHeader(name, headers[name]))
     });
     xhr.addEventListener('readystatechange', ready(promisetypes, xhr), !1);
-    xhr.send(typeof data === "object" ? getQueryString(data) : data);
+    // xhr.send(typeof data === "object" ? getQueryString(data) : data);
+    xhr.send(data);
     promisetypes.abort = function() {
         return xhr.abort()
     };
     return promisetypes
 };
 $.modal = function () {
-    let modals = document.getElementsByClassName("modal");
-    for (let i = 0; i < modals.length; i++) {
+    var modals = document.getElementsByClassName("modal");
+    for (var i = 0; i < modals.length; i++) {
         modals[i].onclick = function (e) {
             if (e.target.className.split(" ").indexOf("modal") > -1) {
-                // e.target.style.visibility = "hidden"; // check
-                $(e.target).fadeOut(10)
+                e.target.style.visibility = "hidden"; // check
+                // $(e.target).fadeOut(10)
             }
         };
     }
 };
 $.tabs = function (callback){
-    let tabTitles = document.getElementsByClassName("tab-title");
-    for(let i = 0; i < tabTitles.length; i++){
-        let v = tabTitles[i], tagA = $(tabTitles[i]).find("a");
-        for(let j = 0; j < tagA.el.length; j++) {
-            let el = tagA.el[j];
+    var tabTitles = document.getElementsByClassName("tab-title");
+    for(var i = 0; i < tabTitles.length; i++){
+        var v = tabTitles[i], tagA = $(tabTitles[i]).find("a");
+        for(var j = 0; j < tagA.el.length; j++) {
+            var el = tagA.el[j];
             el.index = j;
             document.getElementById(v.getAttribute('target')).querySelector(".active").style.display = "block";
             el.onclick = function (e) {
                 if(e.target.className.split(" ").indexOf("tab-title-active")<0) {
-                    let a = document.getElementById(v.getAttribute('target'));
-                    for (let k = 0; k < v.getElementsByTagName("a").length; k++) {
+                    var a = document.getElementById(v.getAttribute('target'));
+                    for (var k = 0; k < v.getElementsByTagName("a").length; k++) {
                         v.getElementsByTagName("a")[k].className = v.getElementsByTagName("a")[k].className.replace("tab-title-active", "");
                     }
-                    for (let l = 0; l < a.querySelectorAll("div.tab-data").length; l++) {
+                    for (var l = 0; l < a.querySelectorAll("div.tab-data").length; l++) {
                         a.querySelectorAll("div.tab-data")[l].style.display = "none";
                     }
-                    let b = a.querySelector("#" + e.target.getAttribute("href").substr(1));
+                    var b = a.querySelector("#" + e.target.getAttribute("href").substr(1));
                     b.style.display = "block";
                     e.target.className += "tab-title-active";
                     callback(e.target, e.target.index);
@@ -1446,6 +1710,117 @@ $.tabs = function (callback){
     return this
 };
 $.inArray = function (value, array) {
-    for (let i=0; i<array.length; i++) { if (array[i] === value) return true; }
+    for (var i=0; i<array.length; i++) { if (array[i] === value) return true; }
     return false;
+};
+$.createSVG = function (imgURL) {
+    let parser = new DOMParser();
+    return new Promise(function (resolve, reject) {
+        $.ajax({
+            url: imgURL,
+            type: 'GET',
+            success: function(data){
+                resolve(parser.parseFromString(data,"text/xml").getElementsByTagName("svg")[0]);
+            },
+            error: function(error){
+                reject(error)
+            }
+        })
+
+    })
+};
+$.saveAs= function (data, filename, type) {
+    let file = new Blob([data], {type: type});
+    if (window.navigator.msSaveOrOpenBlob) // IE10+
+        window.navigator.msSaveOrOpenBlob(file, filename);
+    else { // Others
+        let a = document.createElement("a"),
+            url = URL.createObjectURL(file);
+        a.href = url;
+        a.download = filename+"."+type;
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(function() {
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }, 0);
+    }
+};
+$.addCSS= function (selector, cssObject, styleSelector) {
+    let head = document.head || document.getElementsByTagName('head')[0],
+        style = document.createElement('style'), styleText = "";
+    if(document.querySelector("[name="+styleSelector+"]"))
+        style=document.querySelector("[name="+styleSelector+"]");
+    style.setAttribute("name",styleSelector);
+    styleText+=selector+" {\n";
+    for(let css in cssObject){
+        styleText+=css.replace(/([A-Z])/g, function(matches, varter) {
+            return "-"+matches.toLowerCase()
+        })+": "+cssObject[css]+"!important;\n";
+    }
+    styleText+="}";
+    // style.type = 'text/css';
+    if(!!(window.attachEvent && !window.opera)) {
+        style.styleSheet.cssText = styleText;
+    } else {
+        style.appendChild(document.createTextNode(styleText));
+    }
+
+    head.appendChild(style);
+};
+$.read= function(filepath) {
+    let str = "";
+    let txtFile = new File(filepath);
+    txtFile.open("r");
+    while (!txtFile.eof) {
+        // read each line of text
+        str += txtFile.readln() + "\n";
+    }
+    return str;
+};
+$.write= function(filepath, output) {
+    let txtFile = new File(filepath);
+    txtFile.open("w"); //
+    txtFile.writeln(output);
+    txtFile.close();
+};
+$.getSelectedText= function() {
+    let text = "", containerElement = null;
+    if (typeof window.getSelection !== "undefined") {
+        let sel = window.getSelection();
+        if (sel.rangeCount) {
+            let node = sel.getRangeAt(0).commonAncestorContainer;
+            containerElement = node.nodeType == 1 ? node : node.parentNode;
+            text = sel.toString();
+        }
+    } else if (typeof document.selection !== "undefined" &&
+        document.selection.type !== "Control") {
+        let textRange = document.selection.createRange();
+        containerElement = textRange.parentElement();
+        text = textRange.text;
+    }
+    return {
+        text: text,
+        containerElement: containerElement
+    };
+};
+$.scrollTo= function(endY, duration=60) {
+    var startY = window.scrollY || window.pageYOffset,
+        distanceY = endY - startY,
+        startTime = new Date().getTime();
+
+    // Easing function
+    var easeInOutQuart = function(time, from, distance, duration) {
+        if ((time /= duration / 2) < 1) return distance / 2 * time * time * time * time + from;
+        return -distance / 2 * ((time -= 2) * time * time * time - 2) + from;
+    };
+
+    var timer = window.setInterval(function() {
+        var time = new Date().getTime() - startTime,
+            newY = easeInOutQuart(time, startY, distanceY, duration);
+        if (time >= duration) {
+            window.clearInterval(timer);
+        }
+        window.scrollTo(0, newY);
+    }, 1000 / 60); // 60 fps
 };
