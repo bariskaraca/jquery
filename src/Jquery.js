@@ -182,26 +182,46 @@ Jquery.prototype = {
         });
         return $(nodes)
     },
+    indexOf: function(element) {
+        return this[_toArray](this.el).indexOf(element)
+    },
+    every: function(callback) {
+        this[_toArray](this.el).every(function (el,idx, arr) {
+            callback.call(el,el,idx,arr);
+        })
+    },
     map: function(callback) {
-        this[_toArray](this.el).map(callback)
+        this[_toArray](this.el).map(function (el,idx, arr) {
+            callback.call(el,el,idx,arr);
+        })
     },
     forEach: function(callback) {
-        this[_toArray](this.el).forEach(callback)
+        this[_toArray](this.el).forEach(function (el,idx, arr) {
+            callback.call(el,el,idx,arr);
+        })
     },
     filter: function(callback) {
         return $(this[_toArray](this.el).filter(callback))
     },
     each: function(callback) {
-        this[_toArray](this.el).forEach(callback)
+        this[_toArray](this.el).forEach(function (el,idx, arr) {
+            callback.call(el,el,idx,arr);
+        })
     },
     some: function(callback) {
-        return this[_toArray](this.el).some(callback)
+        this[_toArray](this.el).some(callback)
     },
     pop: function() {
-        return $(this[_toArray](this.el).pop())
+        return this[_toArray](this.el).pop()
     },
     shift: function() {
-        return $(this[_toArray](this.el).shift())
+        return this[_toArray](this.el).shift()
+    },
+    reduce: function(callback, initialValue) {
+        return this[_toArray](this.el).reduce(callback, initialValue)
+    },
+    reduceRight: function(callback, initialValue) {
+        return this[_toArray](this.el).reduceRight(callback, initialValue)
     },
     /**
      * Get the index of the first element in the set of matched elements.
@@ -1390,20 +1410,6 @@ Jquery.prototype = {
         }
 
     }, // add
-    indexOf: function(element) {
-        return this[_toArray](this.el).indexOf(element)
-    },
-    every: function(callback) {
-        this[_toArray](this.el).every(function (el,idx, arr) {
-            callback.call(el,el,idx,arr);
-        })
-    },
-    reduce: function(callback, initialValue) {
-        return this[_toArray](this.el).reduce(callback, initialValue)
-    },
-    reduceRight: function(callback, initialValue) {
-        return this[_toArray](this.el).reduceRight(callback, initialValue)
-    },
     alterClass: function ( removals ) {
 
         this[_toArray](this.el).forEach(function(value) {
